@@ -1,0 +1,124 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		.form {}
+
+		div.container {
+			width: 75vw;
+			margin: auto !important;
+			padding: 0;
+			margin: 0;
+		}
+
+		input.on {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 3vw;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 6vw;
+			margin: 2vw;
+			width: 32vw;
+			height: 20vw;
+		}
+
+		input.off {
+			background-color: rgb(99, 47, 17);
+			border: none;
+			color: white;
+			padding: 3vw;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 6vw;
+			margin: 2vw;
+			width: 32vw;
+			height: 20vw;
+		}
+
+		input.pw {
+			border: 1px solid black;
+			width: 75vw;
+			height: 20vw;
+			font-size: 20vw;
+		}
+
+		button.pad {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 3vw;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 8vw;
+			margin: 2vw;
+			width: 20vw;
+			height: 20vw;
+		}
+	</style>
+	<script>
+		function press(k) { document.forms[0].pw.value += k; return false; }
+		function reset() { document.forms[0].pw.value = ""; }
+		function back() { document.forms[0].pw.value = document.forms[0].pw.value.substr(0, document.forms[0].pw.value.length - 1); }
+	</script>
+</head>
+
+<body>
+	<header class="w3-container w3-card w3-theme">
+		<h1>WRT ACCCTL</h1>
+	</header>
+
+
+	<form id="form" method="POST">
+
+		<div class="container">
+
+			<input class="on" name="internetEnable" type="submit" value="enable">
+			<input class="off" name="internetEnable" type="submit" value="disable">
+		</div>
+
+		<div class="container">
+			<input class="pw" type="password" name="pw" value="<%= pw %>">
+		</div>
+	</form>
+
+	<div class="container">
+		<button class="pad" onclick="press('1');">1</button>
+		<button class="pad" onclick="press('2');">2</button>
+		<button class="pad" onclick="press('3');">3</button>
+	</div>
+	<div class="container">
+		<button class="pad" onclick="press('4');">4</button>
+		<button class="pad" onclick="press('5');">5</button>
+		<button class="pad" onclick="press('6');">6</button>
+	</div>
+	<div class="container">
+		<button class="pad" onclick="press('7');">7</button>
+		<button class="pad" onclick="press('8');">8</button>
+		<button class="pad" onclick="press('9');">9</button>
+	</div>
+	<div class="container">
+		<button class="pad" onclick="reset();">C</button>
+		<button class="pad" onclick="press('0');">0</button>
+		<button class="pad" onclick="back();">&lt;</button>
+	</div>
+
+	<div class="container">
+		<%= error %>
+	</div>
+
+
+	<footer class="w3-container w3-bottom w3-theme w3-margin-top">
+		<h3>sdfj.kr</h3>
+	</footer>
+</body>
+
+</html>
