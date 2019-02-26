@@ -1,75 +1,76 @@
 <html>
 
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<style>
-		.form {}
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+	div.outer {}
 
-		div.container {
-			width: 75vw;
-			margin: auto !important;
-			padding: 0;
-			margin: 0;
-		}
+	div.container {
+		width: 75vw;
+		margin: auto;
+	}
 
-		input.on {
-			background-color: #4CAF50;
-			border: none;
-			color: white;
-			padding: 3vw;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 6vw;
-			margin: 2vw;
-			width: 32vw;
-			height: 20vw;
-		}
+	input.on {
+		background-color: #4CAF50;
+		border: none;
+		color: white;
+		padding: 3vw;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 6vw;
+		margin: 2vw;
+		width: 32vw;
+		height: 16vw;
+	}
 
-		input.off {
-			background-color: rgb(99, 47, 17);
-			border: none;
-			color: white;
-			padding: 3vw;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 6vw;
-			margin: 2vw;
-			width: 32vw;
-			height: 20vw;
-		}
+	input.off {
+		background-color: rgb(99, 47, 17);
+		border: none;
+		color: white;
+		padding: 3vw;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 6vw;
+		margin: 2vw;
+		width: 32vw;
+		height: 16vw;
+	}
 
-		input.pw {
-			border: 1px solid black;
-			width: 75vw;
-			height: 20vw;
-			font-size: 20vw;
-		}
+	input.pw {
+		border: 1px solid black;
+		width: 75vw;
+		height: 16vw;
+		font-size: 8vw;
+	}
 
-		button.pad {
-			background-color: #4CAF50;
-			border: none;
-			color: white;
-			padding: 3vw;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 8vw;
-			margin: 2vw;
-			width: 20vw;
-			height: 20vw;
-		}
-	</style>
-	<script>
-		function press(k) { document.forms[0].pw.value += k; return false; }
-		function reset() { document.forms[0].pw.value = ""; }
-		function back() { document.forms[0].pw.value = document.forms[0].pw.value.substr(0, document.forms[0].pw.value.length - 1); }
-	</script>
-</head>
+	button.pad {
+		background-color: #4CAF50;
+		border: none;
+		color: white;
+		padding: 3vw;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 8vw;
+		margin: 2vw;
+		width: 16vw;
+		height: 16vw;
+	}
+
+	body {
+		touch-action: manipulation;
+	}
+</style>
+<script>
+	function press(k) { document.forms[0].pw.value += k; return false; }
+	function reset() { document.forms[0].pw.value = ""; }
+	function back() { document.forms[0].pw.value = document.forms[0].pw.value.substr(0, document.forms[0].pw.value.length - 1); }
+</script>
 
 <body>
 	<header class="w3-container w3-card w3-theme">
@@ -79,40 +80,51 @@
 
 	<form id="form" method="POST">
 
-		<div class="container">
+		<div class="outer">
+			<div class="container">
 
-			<input class="on" name="internetEnable" type="submit" value="enable">
-			<input class="off" name="internetEnable" type="submit" value="disable">
+				<input class="on" name="internetEnable" type="submit" value="enable">
+				<input class="off" name="internetEnable" type="submit" value="disable">
+			</div>
 		</div>
-
-		<div class="container">
-			<input class="pw" type="password" name="pw" value="<%= pw %>">
+		<div class="outer">
+			<div class="container">
+				<input class="pw" type="password" name="pw" value="<%= pw %>">
+			</div>
 		</div>
 	</form>
-
-	<div class="container">
-		<button class="pad" onclick="press('1');">1</button>
-		<button class="pad" onclick="press('2');">2</button>
-		<button class="pad" onclick="press('3');">3</button>
+	<div class="outer">
+		<div class="container">
+			<button class="pad" onclick="press('1');">1</button>
+			<button class="pad" onclick="press('2');">2</button>
+			<button class="pad" onclick="press('3');">3</button>
+		</div>
 	</div>
-	<div class="container">
-		<button class="pad" onclick="press('4');">4</button>
-		<button class="pad" onclick="press('5');">5</button>
-		<button class="pad" onclick="press('6');">6</button>
+	<div class="outer">
+		<div class="container">
+			<button class="pad" onclick="press('4');">4</button>
+			<button class="pad" onclick="press('5');">5</button>
+			<button class="pad" onclick="press('6');">6</button>
+		</div>
 	</div>
-	<div class="container">
-		<button class="pad" onclick="press('7');">7</button>
-		<button class="pad" onclick="press('8');">8</button>
-		<button class="pad" onclick="press('9');">9</button>
+	<div class="outer">
+		<div class="container">
+			<button class="pad" onclick="press('7');">7</button>
+			<button class="pad" onclick="press('8');">8</button>
+			<button class="pad" onclick="press('9');">9</button>
+		</div>
 	</div>
-	<div class="container">
-		<button class="pad" onclick="reset();">C</button>
-		<button class="pad" onclick="press('0');">0</button>
-		<button class="pad" onclick="back();">&lt;</button>
+	<div class="outer">
+		<div class="container">
+			<button class="pad" onclick="reset();">C</button>
+			<button class="pad" onclick="press('0');">0</button>
+			<button class="pad" onclick="back();">&lt;</button>
+		</div>
 	</div>
-
-	<div class="container">
-		<%= error %>
+	<div class="outer">
+		<div class="container">
+			<%= error %>
+		</div>
 	</div>
 
 
